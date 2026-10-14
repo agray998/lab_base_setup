@@ -1,4 +1,11 @@
 #!/bin/bash
+sudo apt-get update
+sudo apt-get install -y curl apt-transport-https lsb-release ca-certificates
+curl -sL https://deb.nodesource.com/setup_12.x | sudo bash
+
+curl -fsSL https://get.docker.com | sudo bash
+sudo gpasswd -a $USER docker
+
 curl -fsSL https://code-server.dev/install.sh | sh
 sudo systemctl enable --now code-server@$USER
 sleep 10
